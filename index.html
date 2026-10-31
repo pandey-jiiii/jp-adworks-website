@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JP ADWORKS – Building Brands. Accelerating Growth.</title>
+  <meta name="description" content="JP ADWORKS is a creative branding and communication agency.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Playfair Display = bold editorial headings; Inter = body/UI -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="top">
+    <div class="container header__in">
+      <a href="#hero" class="logo"><img src="assets/logo.png" alt="JP ADWORKS"></a>
+      <button class="burger" aria-label="Open menu" aria-expanded="false"
+        aria-controls="nav"><span></span><span></span><span></span></button>
+      <nav class="nav" id="nav" aria-label="Main">
+        <a href="#hero" class="is-active">Home</a><a href="#about">About</a><a href="#services">Services</a><a
+          href="#work">Work</a><a href="#process">Process</a><a href="#contact">Contact</a>
+        <a href="#contact" class="btn btn--red btn--sm nav__cta">Let's Talk</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="container hero__in">
+        <div class="hero__text">
+          <p class="eyebrow">Creative. Strategic. Impactful.</p>
+          <h1>Building Brands. Accelerating Growth<span class="dot">.</span></h1>
+          <p class="lead">We build brands, communication and digital experiences that help businesses stand out, connect
+            with their audience and grow with confidence.</p>
+          <div class="btns">
+            <a href="#contact" class="btn btn--red">Start a Project <i>→</i></a>
+            <a href="#work" class="btn btn--outline">Explore Our Work <i>→</i></a>
+          </div>
+        </div>
+      </div>
+      <!-- Hero image is absolutely positioned to the right and bleeds off the edge; .hero clips it (overflow:hidden). -->
+      <div class="hero__img"><img src="assets/hero.jpg" alt="JP ADWORKS creative branding project"></div>
+      <div class="container trust">
+        <p>Trusted by businesses across industries</p>
+        <ul class="logos">
+          <li><img src="assets/client-mrc.png" alt="MRC Agrotech"></li>
+          <li><img src="assets/client-libra.png" alt="Libra Travels"></li>
+          <li><img src="assets/client-agronica.png" alt="Agronica"></li>
+          <li><img src="assets/client-temi.png" alt="Temi Tea Estate"></li>
+          <li><img src="assets/client-sikkim.png" alt="Sikkim Supreme"></li>
+          <li><img src="assets/client-esps.png" alt="ESPS Capital"></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="about reveal" id="about">
+      <div class="about__text">
+        <p class="eyebrow eyebrow--red">What we do</p>
+        <h2>We Turn Business Ideas Into Brands People Remember<span class="dot">.</span></h2>
+        <p>JP ADWORKS is a creative branding and communication agency helping businesses build stronger brands and
+          communicate with greater impact.</p>
+        <p>From brand identity and advertising to digital experiences, print production and brand experiences, we bring
+          strategy, creativity and execution together under one roof.</p>
+        <a href="#services" class="link">Discover JP ADWORKS →</a>
+      </div>
+      <div class="about__img"><img src="assets/about.jpg" alt="JP ADWORKS branded stationery"></div>
+    </section>
+
+    <!-- ============ BLACK VALUE STRIP ============ -->
+    <section class="strip">
+      <div class="container strip__in">
+        <h2>Good Business Deserves Better Communication<span class="dot">.</span></h2>
+        <div class="strip__mid">
+          <p>Is your business facing any of these challenges?</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24">
+                <path d="M6 3h12l4 6-10 12L2 9z" />
+              </svg>Your brand isn't memorable.</li>
+            <li><svg viewBox="0 0 24 24">
+                <path d="M3 11v2l4 1V10zM7 10l12-5v14L7 14M9 14l1 6h3l-1-5" />
+              </svg>Your marketing feels inconsistent.</li>
+            <li><svg viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="12" rx="1" />
+                <path d="M8 20h8M12 16v4" />
+              </svg>Your presentations don't create impact.</li>
+            <li><svg viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="16" rx="1" />
+                <path d="M3 9h18" />
+              </svg>Your website feels outdated.</li>
+            <li><svg viewBox="0 0 24 24">
+                <path d="M4 20V10M10 20V4M16 20v-8M22 20H2" />
+              </svg>Your social media isn't delivering impact.</li>
+            <li><svg viewBox="0 0 24 24">
+                <circle cx="9" cy="8" r="3" />
+                <circle cx="17" cy="9" r="2.5" />
+                <path d="M3 20c0-4 3-6 6-6s6 2 6 6M16 14c3 0 5 2 5 5" />
+              </svg>You're struggling to stand apart.</li>
+          </ul>
+        </div>
+        <div class="strip__cta"><a href="#contact" class="circ" aria-label="Contact us">→</a>
+          <p>We help turn these challenges into opportunities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="services reveal" id="services">
+      <div class="container services__in">
+        <div class="services__head">
+          <p class="eyebrow eyebrow--red">Our Services</p>
+          <h2>Creative Thinking. Strategic Communication. Complete Brand Solutions<span class="dot">.</span></h2>
+        </div>
+        <div class="cards">
+          <!-- Card 02 is the "featured" dark card, as in the reference -->
+          <article class="card"><b class="num">01</b>
+            <h3>Branding &amp; Identity</h3><img src="assets/service-branding.jpg" alt="Branding and identity">
+            <ul>
+              <li>Brand Strategy</li>
+              <li>Logo Design</li>
+              <li>Brand Identity</li>
+              <li>Brand Guidelines</li>
+              <li>Corporate Identity</li>
+              <li>Packaging Design</li>
+            </ul><a href="#contact">Explore →</a>
+          </article>
+          <article class="card card--dark"><b class="num">02</b>
+            <h3>Advertising &amp; Communication</h3><img src="assets/service-advertising.jpg"
+              alt="Advertising and communication">
+            <ul>
+              <li>Advertising Campaigns</li>
+              <li>Marketing Creatives</li>
+              <li>Social Media</li>
+              <li>Corporate Communication</li>
+              <li>Brochures &amp; Profiles</li>
+              <li>Presentations &amp; Catalogs</li>
+            </ul><a href="#contact">Explore →</a>
+          </article>
+          <article class="card"><b class="num">03</b>
+            <h3>Digital &amp; Web</h3><img src="assets/service-digital.jpg" alt="Digital and web">
+            <ul>
+              <li>Website Design</li>
+              <li>Website Development</li>
+              <li>Landing Pages</li>
+              <li>Digital Creatives</li>
+              <li>Social Media Design</li>
+              <li>Online Brand Communication</li>
+            </ul><a href="#contact">Explore →</a>
+          </article>
+          <article class="card"><b class="num">04</b>
+            <h3>Print &amp; Brand Production</h3><img src="assets/service-print.jpg" alt="Print and brand production">
+            <ul>
+              <li>Corporate Print</li>
+              <li>Packaging &amp; Labels</li>
+              <li>Promotional Products</li>
+              <li>Merchandise</li>
+              <li>Large Format Printing</li>
+              <li>Custom Print Solutions</li>
+            </ul><a href="#contact">Explore →</a>
+          </article>
+          <article class="card"><b class="num">05</b>
+            <h3>Outdoor &amp; Brand Experiences</h3><img src="assets/service-outdoor.jpg"
+              alt="Outdoor and brand experiences">
+            <ul>
+              <li>Outdoor Advertising</li>
+              <li>Signage &amp; Display</li>
+              <li>Exhibition Branding</li>
+              <li>Event Branding</li>
+              <li>Vehicle Branding</li>
+              <li>Brand Experiences</li>
+            </ul><a href="#contact">Explore →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS CAROUSEL ============ -->
+    <section class="work container" id="work">
+      <div class="work__head">
+        <div>
+          <p class="eyebrow eyebrow--red">Selected Work</p>
+          <h2>Ideas We've Turned Into Impact<span class="dot">.</span></h2>
+        </div><a href="#work" class="link">View All Work →</a>
+      </div>
+      <div class="carousel" data-carousel>
+        <button class="arrow arrow--prev" aria-label="Previous project">‹</button>
+        <div class="carousel__track" tabindex="0">
+          <figure><img src="assets/project-1.jpg" alt="Agronica Seeds packaging">
+            <figcaption><b>Agronica Seeds</b>Packaging Design</figcaption>
+          </figure>
+          <figure><img src="assets/project-2.jpg" alt="Libra Travels brand communication">
+            <figcaption><b>Libra Travels</b>Brand Communication</figcaption>
+          </figure>
+          <figure><img src="assets/project-3.jpg" alt="MRC Agrotech brand identity">
+            <figcaption><b>MRC Agrotech</b>Brand Identity &amp; Communication</figcaption>
+          </figure>
+          <figure><img src="assets/project-4.jpg" alt="ESPS Capital corporate profile">
+            <figcaption><b>ESPS Capital</b>Corporate Profile</figcaption>
+          </figure>
+        </div>
+        <button class="arrow arrow--next" aria-label="Next project">›</button>
+      </div>
+    </section>
+
+    <!-- ============ WHY JP ADWORKS ============ -->
+    <section class="why container reveal">
+      <div>
+        <p class="eyebrow eyebrow--red">Why JP Adworks</p>
+        <h2>More Than Design. We Think About Your Business<span class="dot">.</span></h2>
+      </div>
+      <ul class="why__list">
+        <li><svg viewBox="0 0 24 24">
+            <path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c1 1 1 2 1 3h6c0-1 0-2 1-3a6 6 0 0 0-4-10z" />
+          </svg><b>Strategic Thinking</b><span>We understand the business behind the brief.</span></li>
+        <li><svg viewBox="0 0 24 24">
+            <path d="M6 3h12l4 6-10 12L2 9z" />
+          </svg><b>Creative Excellence</b><span>Ideas built to be distinctive and memorable.</span></li>
+        <li><svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2" />
+          </svg><b>Professional Execution</b><span>From concept to final delivery.</span></li>
+        <li><svg viewBox="0 0 24 24">
+            <path d="M12 3l9 5-9 5-9-5zM3 13l9 5 9-5M3 17l9 5 9-5" />
+          </svg><b>End-to-End Capability</b><span>Connected solutions across touchpoints.</span></li>
+        <li><svg viewBox="0 0 24 24">
+            <circle cx="9" cy="7" r="3" />
+            <circle cx="17" cy="8" r="2.5" />
+            <path d="M3 20c0-4 3-6 6-6s6 2 6 6M16 14c3 0 5 2 5 5" />
+          </svg><b>Long-Term Partnership</b><span>Built on trust and consistency.</span></li>
+      </ul>
+    </section>
+
+    <!-- ============ TEAM ============ -->
+    <section class="team container reveal">
+      <div class="team__head">
+        <div>
+          <p class="eyebrow eyebrow--red">The people behind JP Adworks</p>
+          <h2>A Creative Core. A Trusted Network.</h2>
+        </div>
+        <p>JP ADWORKS brings together creative thinking, technology and specialized expertise through a core team and a
+          trusted network of professionals.</p>
+      </div>
+      <div class="team__grid">
+        <article><img src="assets/team-1.jpg" alt="Jitendra Pandey">
+          <h3>Jitendra Pandey</h3><small>Founder &amp; Creative Director</small>
+          <p>Brand Strategy<br>Creative Direction<br>Branding + Communication</p>
+        </article>
+        <article><img src="assets/team-5.jpg" alt="Sai Suresh Murthy">
+          <h3>Sai Suresh Murthy</h3><small>Creative &amp; Content Consultant</small>
+          <p>Copywriting<br>Creative Concepts<br>Content Development</p>
+        </article>2
+        <article><img src="assets/team-3.jpg" alt="Darshan Tiwari">
+          <h3>Darshan Tiwari</h3><small>Event &amp; Brand Experience Consultant</small>
+          <p>Event Management<br>Event Execution<br>Brand Experiences</p>
+        </article>
+        <article><img src="assets/team-4.jpg" alt="Kirankumar Sripati">
+          <h3>Kirankumar Sripati</h3><small>Web &amp; Technology Consultant</small>
+          <p>Web Development<br>Applications<br>Technology Solutions</p>
+        </article>
+        <article><img src="assets/team-2.jpg" alt="Sudhanshu Pandey">
+          <h3>Sudhanshu Pandey</h3><small>Digital &amp; Web Lead</small>
+          <p>Website<br>Digital Experiences<br>Web Projects</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS (dark) ============ -->
+    <section class="process" id="process">
+      <div class="container">
+        <div class="process__head">
+          <div>
+            <p class="eyebrow eyebrow--red">Our Process</p>
+            <h2>From Idea to Impact<span class="dot">.</span></h2>
+          </div><a href="#contact" class="link">Know More →</a>
+        </div>
+        <ol class="steps">
+          <li><span class="step__n">01</span><b>Discover</b>
+            <p>We understand your business, audience and objectives.</p>
+          </li>
+          <li><span class="step__n">02</span><b>Strategize</b>
+            <p>We define the direction and creative opportunity.</p>
+          </li>
+          <li><span class="step__n">03</span><b>Create</b>
+            <p>Ideas take shape through design and content.</p>
+          </li>
+          <li><span class="step__n">04</span><b>Execute</b>
+            <p>We transform ideas into high-quality final communication.</p>
+          </li>
+          <li><span class="step__n">05</span><b>Grow</b>
+            <p>We create systems that evolve with your business.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ CLIENTS + TESTIMONIALS ============ -->
+    <section class="clients container">
+      <div class="clients__l">
+        <p class="eyebrow eyebrow--red">Our Clients</p>
+        <h2>Trusted by Businesses Across Industries<span class="dot">.</span></h2>
+        <ul class="logos">
+          <li><img src="assets/client-mrc.png" alt="MRC Agrotech"></li>
+          <li><img src="assets/client-libra.png" alt="Libra Travels"></li>
+          <li><img src="assets/client-agronica.png" alt="Agronica"></li>
+          <li><img src="assets/client-temi.png" alt="Temi Tea Estate"></li>
+          <li><img src="assets/client-sikkim.png" alt="Sikkim Supreme"></li>
+          <li><img src="assets/client-esps.png" alt="ESPS Capital"></li>
+        </ul>
+      </div>
+      <div class="testi" data-testi>
+        <p class="eyebrow eyebrow--red">Testimonials</p>
+        <h3>Good Work Builds Good Relationships.</h3>
+        <div class="testi__row">
+          <button class="arrow" data-dir="-1" aria-label="Previous testimonial">‹</button>
+          <div class="testi__slides" aria-live="polite">
+            <!-- TODO: Replace placeholder testimonials with real client copy -->
+            <blockquote class="is-on">
+              <p>"Professional, creative and reliable. JP ADWORKS understood our brand needs and delivered beyond
+                expectations."</p><cite><b>Client Name</b>Company / Designation</cite>
+            </blockquote>
+            <blockquote>
+              <p>"A team that listens first and designs second. Every deliverable felt considered and on brand."</p>
+              <cite><b>Client Name</b>Company / Designation</cite>
+            </blockquote>
+            <blockquote>
+              <p>"From identity to print, everything arrived consistent and on time."</p><cite><b>Client Name</b>Company
+                / Designation</cite>
+            </blockquote>
+          </div>
+          <button class="arrow" data-dir="1" aria-label="Next testimonial">›</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="cta" id="contact">
+      <img class="cta__l" src="assets/cta-left.jpg" alt="">
+      <div class="cta__t">
+        <h2>Ready to Build Something Remarkable?</h2>
+        <p>Whether you're building a new brand, refreshing an existing identity or looking for better ways to
+          communicate your business — let's start a conversation.</p>
+      </div>
+      <a href="mailto:jpadworks@gmail.com" class="btn btn--red">Let's Talk <i>→</i></a>
+      <img class="cta__r" src="assets/cta-right.jpg" alt="">
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div><img class="footer__logo" src="assets/logo-light.png" alt="JP ADWORKS"></div>
+      <div>
+        <h4>Quick Links</h4><a href="#hero">Home</a><a href="#about">About</a><a href="#services">Services</a><a
+          href="#work">Work</a><a href="#process">Process</a><a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h4>Services</h4><a href="#services">Branding &amp; Identity</a><a href="#services">Advertising &amp;
+          Communication</a><a href="#services">Digital &amp; Web</a><a href="#services">Print &amp; Brand
+          Production</a><a href="#services">Outdoor &amp; Brand Experiences</a>
+      </div>
+      <div>
+        <h4>Connect</h4><a href="tel:+919869837344">+91 98698 37344</a><a
+          href="mailto:jpadworks@gmail.com">jpadworks@gmail.com</a><a href="https://wa.me/919869837344" target="_blank" rel="noopener noreferrer">WhatsApp</a><span>Mumbai, India</span>
+      </div>
+    </div>
+    <div class="container footer__bar"><span>© JP ADWORKS. All Rights Reserved.</span><span><a href="#">Privacy
+          Policy</a> | <a href="#">Terms &amp; Conditions</a></span></div>
+  </footer>
+  <button id="backToTop" class="back-to-top" aria-label="Back to top">
+    ↑
+  </button>
+  <script src="script.js"></script>
+</body>
+
+</html>

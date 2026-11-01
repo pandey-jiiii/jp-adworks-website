@@ -1,0 +1,566 @@
+/* JP ADWORKS – Outdoor & Large Format Advertising page. Navbar/footer rules are copied from the homepage stylesheet.
+   Page-specific variables: */
+:root{--cols:7;--tile-ratio:4/3;--work-ratio:5/4}
+/* ==========================================
+   1. VARIABLES  (colours sampled from reference)
+   ========================================== */
+:root {
+   --black: #050505;
+   --white: #fff;
+   --paper: #f7f6f4;
+   --primary: #e30613;
+   --text: #1a1a1a;
+   --muted: #666;
+   --border: #e4e2de;
+   --font-heading: 'Playfair Display', Georgia, serif;
+   --font-body: 'Inter', system-ui, sans-serif;
+   --fs-hero: clamp(2.5rem, 6vw, 5rem);
+   --fs-h2: clamp(1.7rem, 3.2vw, 2.7rem);
+   --fs-body: clamp(.9rem, 1.1vw, 1rem);
+   --gutter: clamp(1rem, 4vw, 4.5rem);
+}
+
+/* ==========================================
+   2. RESET
+   ========================================== */
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0
+}
+
+html {
+   scroll-behavior: smooth;
+   scroll-padding-top: 80px
+}
+
+body {
+   font: 400 var(--fs-body)/1.6 var(--font-body);
+   color: var(--text);
+   background: var(--paper);
+   overflow-x: hidden
+}
+
+img {
+   display: block;
+   max-width: 100%;
+   height: auto
+}
+
+ul,
+ol {
+   list-style: none
+}
+
+a {
+   color: inherit;
+   text-decoration: none
+}
+
+button {
+   font: inherit;
+   cursor: pointer;
+   border: 0;
+   background: none;
+   color: inherit
+}
+
+/* ==========================================
+   3. TYPOGRAPHY
+   ========================================== */
+h1,
+h2,
+h3 {
+   font-family: var(--font-heading);
+   font-weight: 800;
+   line-height: 1.08;
+   letter-spacing: -.01em
+}
+
+h1 {
+   font-size: var(--fs-hero)
+}
+
+h2 {
+   font-size: var(--fs-h2)
+}
+
+.dot {
+   color: var(--primary)
+}
+
+.eyebrow {
+   font-size: .7rem;
+   font-weight: 600;
+   letter-spacing: .14em;
+   text-transform: uppercase;
+   margin-bottom: .8rem
+}
+
+.eyebrow--red {
+   color: var(--primary)
+}
+
+.lead {
+   max-width: 30rem;
+   margin: 1.2rem 0 1.6rem;
+   font-size: .95rem
+}
+
+/* ==========================================
+   4. UTILITIES / BUTTONS
+   ========================================== */
+.container {
+   width: 100%;
+   max-width: 1440px;
+   margin-inline: auto;
+   padding-inline: var(--gutter)
+}
+
+.btns {
+   display: flex;
+   flex-wrap: wrap;
+   gap: .8rem
+}
+
+.btn {
+   display: inline-flex;
+   align-items: center;
+   gap: .5rem;
+   padding: .8rem 1.4rem;
+   border-radius: 999px;
+   font-weight: 600;
+   font-size: .85rem;
+   border: 1.5px solid transparent;
+   transition: transform .25s, background .25s, color .25s
+}
+
+.btn i {
+   font-style: normal
+}
+
+.btn--red {
+   background: var(--primary);
+   color: #fff
+}
+
+.btn--red:hover {
+   background: #b9040f;
+   transform: translateY(-2px)
+}
+
+.btn--outline {
+   border-color: var(--black);
+   background: transparent
+}
+
+.btn--outline:hover {
+   background: var(--black);
+   color: #fff
+}
+
+.btn--sm {
+   padding: .55rem 1.2rem
+}
+
+.btn:active {
+   transform: translateY(0)
+}
+
+.link {
+   font-weight: 600;
+   font-size: .85rem;
+   white-space: nowrap
+}
+
+.link:hover {
+   color: var(--primary)
+}
+
+.arrow {
+   width: 2.4rem;
+   height: 2.4rem;
+   flex: none;
+   border-radius: 50%;
+   background: #fff;
+   border: 1px solid var(--border);
+   font-size: 1.3rem;
+   line-height: 1;
+   box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+   transition: background .2s, color .2s
+}
+
+.arrow:hover {
+   background: var(--black);
+   color: #fff
+}
+
+/* Placeholder shown by script.js for missing images */
+.ph {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   background: #e9e7e3;
+   color: #8a8780;
+   font-size: .7rem;
+   padding: .5rem;
+   min-height: 2.5rem
+}
+
+/* ==========================================
+   5. HEADER
+   ========================================== */
+.header {
+   position: sticky;
+   top: 0;
+   z-index: 50;
+   background: rgba(247, 246, 244, .96);
+   border-bottom: 1px solid var(--border)
+}
+
+.header__in {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   height: 72px
+}
+
+.logo img,
+.logo .ph {
+   height: 55px;
+   width: auto;
+   min-width: 110px
+}
+
+.nav {
+   display: flex;
+   align-items: center;
+   gap: clamp(1rem, 2.4vw, 2.2rem);
+   font-size: .85rem;
+   font-weight: 500
+}
+
+.nav a:not(.btn) {
+  padding: .3rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s linear;
+}
+
+.nav a.is-active,
+.nav a:not(.btn):hover {
+   border-color: var(--primary)
+}
+
+/* red underline = current page */
+.burger {
+   display: none;
+   width: 44px;
+   height: 44px;
+   flex-direction: column;
+   justify-content: center;
+   gap: 5px;
+   align-items: center
+}
+
+.burger span {
+   width: 24px;
+   height: 2px;
+   background: var(--black);
+   transition: transform .3s, opacity .3s
+}
+
+.burger[aria-expanded=true] span:nth-child(1) {
+   transform: translateY(7px) rotate(45deg)
+}
+
+.burger[aria-expanded=true] span:nth-child(2) {
+   opacity: 0
+}
+
+.burger[aria-expanded=true] span:nth-child(3) {
+   transform: translateY(-7px) rotate(-45deg)
+}
+
+/* ==========================================
+   17. FOOTER
+   ========================================== */
+.footer {
+   background: var(--black);
+   color: #ddd;
+   font-size: .8rem;
+   border-top: 1px solid #222
+}
+
+.footer__grid {
+   display: grid;
+   grid-template-columns: 1.2fr 1fr 1.4fr 1.4fr;
+   gap: 2rem;
+   padding-block: 2.5rem
+}
+
+.footer__logo,
+.footer .ph {
+   height: 64px;
+   width: auto;
+   min-width: 120px
+}
+
+.footer h4 {
+   color: #fff;
+   font-size: .85rem;
+   margin-bottom: .8rem
+}
+
+.footer a,
+.footer span {
+   display: block;
+   margin-bottom: .4rem
+}
+
+.footer a:hover {
+   color: var(--primary)
+}
+
+.footer__bar {
+   display: flex;
+   justify-content: space-between;
+   gap: 1rem;
+   flex-wrap: wrap;
+   padding-block: 1rem;
+   border-top: 1px solid #222;
+   font-size: .72rem;
+   color: #999
+}
+
+.footer__bar span,
+.footer__bar a {
+   display: inline;
+   margin: 0
+}
+
+/* ==========================================
+   18. ANIMATIONS (subtle)
+   ========================================== */
+@keyframes fade {
+   from {
+      opacity: 0
+   }
+
+   to {
+      opacity: 1
+   }
+}
+
+.reveal {
+   opacity: 0;
+   transform: translateY(18px);
+   transition: opacity .7s, transform .7s
+}
+
+.reveal.in {
+   opacity: 1;
+   transform: none
+}
+
+/* ==========================================
+   21. ACCESSIBILITY
+   ========================================== */
+:focus-visible {
+   outline: 2px solid var(--primary);
+   outline-offset: 3px
+}
+
+@media(prefers-reduced-motion:reduce) {
+   * {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important
+   }
+
+   .reveal {
+      opacity: 1;
+      transform: none
+   }
+}
+
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 100;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity .25s ease,
+              transform .25s ease,
+              visibility .25s ease,
+              background-color .25s ease;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: #b9040f;
+}
+
+@media (max-width: 600px) {
+  .back-to-top {
+    right: 16px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+  }
+}
+/* ==========================================
+   NAVBAR + FOOTER RESPONSIVE (same breakpoints as homepage)
+   ========================================== */
+@media(max-width:1024px){.footer__grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){
+  .burger{display:flex}
+  .nav{position:absolute;top:72px;left:0;right:0;flex-direction:column;align-items:flex-start;gap:0;background:var(--paper);border-bottom:1px solid var(--border);padding:.5rem var(--gutter) 1.2rem;display:none}
+  .nav.is-open{display:flex;animation:fade .25s}
+  .nav a:not(.btn){padding:.7rem 0;width:100%}
+  .nav__cta{margin-top:.6rem}
+  .footer__grid{grid-template-columns:1fr}
+}
+@media(max-width:360px){.btn{width:100%;justify-content:center}}
+
+/* ==========================================
+   SERVICE PAGE: shared building blocks
+   Page-specific values come from the variables in :root below.
+   ========================================== */
+svg{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+h1,h2{font-weight:700}
+.red{color:var(--primary)}
+/* Kicker: red rule + small grey label, as in the reference screenshots */
+.kicker{display:flex;align-items:center;gap:.8rem;font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#666;margin-bottom:.9rem}
+.kicker::before{content:"";width:2.2rem;height:2px;background:var(--primary);flex:none}
+.sec-title{font-size:clamp(1.9rem,3.4vw,3rem);line-height:1.06}
+.sec-intro{font-size:clamp(.9rem,1.15vw,1.05rem);color:#444;max-width:34rem}
+
+/* ---------- HERO ----------
+   Desktop: image is pinned to the right and fades into the page on its left edge,
+   so the headline always sits on clean background.
+   Mobile: image drops below the text as a full-width block. */
+.hero{position:relative;overflow:hidden;background:var(--paper);min-height:clamp(420px,40vw,600px);display:flex;align-items:center}
+.hero__in{position:relative;z-index:2;width:100%}
+.hero__text{max-width:min(34rem,50%);padding-block:clamp(2.5rem,5vw,4rem)}
+.hero h1{font-size:clamp(2.3rem,4.5vw,4rem);line-height:1.05;letter-spacing:-.015em}
+.hero__tag{font-size:clamp(1.05rem,1.7vw,1.5rem);line-height:1.35;color:#333;margin:1.2rem 0 .9rem;max-width:26rem}
+.hero__desc{font-size:clamp(.88rem,1.05vw,1rem);color:#444;max-width:26rem;margin-bottom:1.8rem}
+.hero__media{position:absolute;top:0;right:0;bottom:0;width:62%;z-index:1;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 24%);mask-image:linear-gradient(90deg,transparent 0,#000 24%)}
+.hero__media img,.hero__media .ph{width:100%;height:100%;object-fit:cover;background:#e3e0db}
+
+/* ---------- SERVICES OVERVIEW ---------- */
+.overview{background:#fcfbfa;padding-block:clamp(2.5rem,5vw,4.2rem)}
+.head-split{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:clamp(1.8rem,3.5vw,2.8rem)}
+.grid-services{display:grid;grid-template-columns:repeat(var(--cols),minmax(0,1fr));gap:clamp(.8rem,1.6vw,1.4rem)}
+.svc__tile{background:#f3f1ee;aspect-ratio:var(--tile-ratio);overflow:hidden;margin-bottom:.9rem;transition:transform .35s,background .35s}
+.svc__tile img,.svc__tile .ph{width:100%;height:100%;object-fit:contain;padding:.7rem}
+.svc:hover .svc__tile{transform:translateY(-6px);background:#efece8}
+.svc h3{font-family:var(--font-body);font-weight:600;font-size:clamp(.85rem,1vw,.95rem);line-height:1.3;margin-bottom:.35rem;transition:color .25s}
+.svc:hover h3{color:var(--primary)}
+.svc p{font-size:.76rem;color:var(--muted);line-height:1.5}
+
+/* ---------- SELECTED WORK ---------- */
+.work{background:var(--paper);padding-block:clamp(2.5rem,5vw,4.2rem)}
+.work__head{display:grid;grid-template-columns:1.1fr 1.5fr auto;gap:2rem;align-items:end;margin-bottom:clamp(1.5rem,3vw,2.4rem)}
+.work__head .sec-intro{font-size:.88rem}
+.view-all{font-size:.8rem;font-weight:600;color:var(--primary);white-space:nowrap;transition:transform .25s}
+.view-all:hover{transform:translateX(4px)}
+.work__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.proj{overflow:hidden}
+.proj__img{overflow:hidden;aspect-ratio:var(--work-ratio);background:#e3e0db}
+.proj__img img,.proj__img .ph{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.proj:hover .proj__img img{transform:scale(1.05)}
+.proj figcaption{padding-top:.7rem;font-size:.76rem;color:var(--muted)}
+.proj figcaption b{display:block;color:var(--text);font-size:.85rem;font-weight:600}
+
+/* ---------- PROCESS ---------- */
+.process-sec{background:#fcfbfa;padding-block:clamp(2.5rem,5vw,4rem)}
+.process-sec__in{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.3fr);gap:2rem;align-items:center}
+.flow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.flow li{position:relative;padding:.3rem 1.6rem .3rem 1.4rem;border-left:1px solid var(--border)}
+.flow li:not(:last-child)::after{content:"›";position:absolute;right:.3rem;top:50%;transform:translateY(-50%);color:#999;font-size:1.2rem}
+.flow__top{display:flex;align-items:center;gap:.8rem;margin-bottom:.5rem}
+.flow__n{font-family:var(--font-heading);font-size:clamp(1.8rem,2.6vw,2.5rem);font-weight:600;color:#d3d0cb;line-height:1}
+.flow__ic{width:2.5rem;height:2.5rem;border-radius:50%;background:#fbecec;color:var(--primary);display:grid;place-items:center}
+.flow__ic svg{width:18px;height:18px}
+.flow h3{font-family:var(--font-body);font-size:1rem;font-weight:600;margin-bottom:.3rem}
+.flow p{font-size:.76rem;color:var(--muted);line-height:1.5}
+
+/* ---------- FINAL CTA ----------
+   Two red circles bleed off opposite corners as decorative elements. */
+.cta{position:relative;overflow:hidden;background:var(--black);color:#fff;padding-block:clamp(2.5rem,5vw,4rem)}
+.cta::before,.cta::after{content:"";position:absolute;border-radius:50%;background:linear-gradient(135deg,#e30613,#5a0008)}
+.cta::before{left:-120px;top:-110px;width:260px;height:260px}
+.cta::after{right:-140px;bottom:-170px;width:420px;height:420px;background:linear-gradient(315deg,#e30613,#4a0007 75%)}
+.cta__bg{display:none}
+.cta__in{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:2rem;flex-wrap:wrap}
+.cta .kicker{color:#ddd}
+.cta h2{font-size:clamp(1.8rem,3.2vw,2.8rem);margin-bottom:.8rem;max-width:36rem}
+.cta p{font-size:.9rem;color:#ddd;max-width:34rem}
+.cta .btn{margin-right:clamp(0rem,4vw,5rem)}
+
+/* ---------- BACK TO TOP is inherited from homepage section 21 block above ---------- */
+
+/* ==========================================
+   RESPONSIVE – TABLET (≤1024px)
+   ========================================== */
+@media(max-width:1024px){
+  .hero__text{max-width:56%}
+  .grid-services{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .work__head{grid-template-columns:1fr auto}.work__head .sec-intro{grid-column:1/-1;order:3}
+  .process-sec__in{grid-template-columns:1fr}
+}
+/* ==========================================
+   RESPONSIVE – MOBILE (≤768px)
+   ========================================== */
+@media(max-width:768px){
+  /* Hero: text first, image block below (full width, fade removed) */
+  .hero{flex-direction:column;align-items:stretch;min-height:0}
+  .hero__text{max-width:100%}
+  .hero__media{position:relative;width:100%;aspect-ratio:4/3;-webkit-mask-image:none;mask-image:none}
+  .head-split{grid-template-columns:1fr;gap:1rem}
+  .grid-services{grid-template-columns:repeat(2,minmax(0,1fr))}
+  /* Portfolio becomes a swipeable horizontal strip */
+  .work__grid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:.8rem;margin-inline:calc(var(--gutter)*-1);padding-inline:var(--gutter);scrollbar-width:none}
+  .work__grid::-webkit-scrollbar{display:none}
+  .proj{flex:0 0 72%;scroll-snap-align:start}
+  .work__head{grid-template-columns:1fr}
+  /* Process becomes vertical */
+  .flow{grid-template-columns:1fr}
+  .flow li{border-left:0;border-top:1px solid var(--border);padding:1.1rem 0}
+  .flow li::after{display:none}
+  .cta .btn{margin-right:0}
+}
+@media(max-width:360px){.grid-services{gap:.8rem}.svc p{font-size:.72rem}}
+
+/* Outdoor: night-billboard image sits behind the right side of the CTA (assets/services/outdoor/cta.jpg).
+   If the file is missing nothing breaks – the black background simply remains. */
+.cta::after{display:none}
+.cta__bg{display:block;position:absolute;inset:0 0 0 38%;z-index:1;background:url(assets/services/outdoor/cta.jpg) center/cover no-repeat;-webkit-mask-image:linear-gradient(90deg,transparent,#000 45%);mask-image:linear-gradient(90deg,transparent,#000 45%)}
+.cta__in{flex-direction:column;align-items:flex-start;gap:1.4rem}
+.cta .btn{margin-right:0}
+@media(max-width:768px){.cta__bg{inset:0;opacity:.35;-webkit-mask-image:none;mask-image:none}}

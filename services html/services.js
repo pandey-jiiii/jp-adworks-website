@@ -1,5 +1,7 @@
-/* JP ADWORKS – Printing page: menu, reveal, smooth scroll, back-to-top, missing-image fallback.
-   Fully independent of the homepage script. */
+/* JP ADWORKS – shared script for the Branding, Printing and Outdoor service pages:
+   menu, reveal, smooth scroll, back-to-top, missing-image fallback.
+   The three original page scripts were byte-identical (apart from the title comment), so one copy serves all.
+   Independent of the homepage script. DOM lookups are guarded so a missing element never throws. */
 (() => {
   'use strict';
 
@@ -19,12 +21,15 @@
   const burger = document.querySelector('.burger');
   const nav = document.getElementById('nav');
   const setMenu = open => {
+    if (!burger || !nav) return;
     nav.classList.toggle('is-open', open);
     burger.setAttribute('aria-expanded', open);
     burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   };
-  burger.addEventListener('click', () => setMenu(!nav.classList.contains('is-open')));
-  nav.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+  if (burger && nav) {
+    burger.addEventListener('click', () => setMenu(!nav.classList.contains('is-open')));
+    nav.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+  }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
   window.addEventListener('resize', () => { if (window.innerWidth > 768) setMenu(false); });
 
@@ -45,6 +50,8 @@
 
   /* Back to top button */
   const backToTop = document.getElementById('backToTop');
-  window.addEventListener('scroll', () => backToTop.classList.toggle('is-visible', window.scrollY > 300), { passive: true });
-  backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  if (backToTop) {
+    window.addEventListener('scroll', () => backToTop.classList.toggle('is-visible', window.scrollY > 300), { passive: true });
+    backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
 })();

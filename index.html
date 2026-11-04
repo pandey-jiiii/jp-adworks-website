@@ -113,70 +113,67 @@
     </section>
 
     <!-- ============ SERVICES ============ -->
-    <section class="services reveal" id="services">
+    <section class="services reveal" id="services" aria-labelledby="services-label">
       <div class="container services__in">
-        <div class="services__head">
-          <p class="eyebrow eyebrow--red">Our Services</p>
-          <h2>Creative Thinking. Strategic Communication. Complete Brand Solutions<span class="dot">.</span></h2>
-        </div>
-        <div class="cards">
-          <!-- Card 02 is the "featured" dark card, as in the reference -->
-          <article class="card"><b class="num">01</b>
-            <h3>Branding &amp; Identity</h3><img src="assets/service-branding.jpg" alt="Branding and identity">
-            <ul>
-              <li>Brand Strategy</li>
-              <li>Logo Design</li>
-              <li>Brand Identity</li>
-              <li>Brand Guidelines</li>
-              <li>Corporate Identity</li>
-              <li>Packaging Design</li>
-            </ul><a href="#contact">Explore →</a>
+        <p class="services__label" id="services-label">Our Services</p>
+        <div class="services__grid">
+          <article class="service-card">
+            <a class="service-card__media" href="services%20html/branding.html" tabindex="-1" aria-hidden="true">
+              <!-- IMAGE: assets/services/branding/hero.jpg -->
+              <img src="assets/services/branding/hero.jpg"
+                alt="Branding and brand identity mockup with brand guidelines, business cards and stationery"
+                loading="lazy">
+            </a>
+            <div class="service-card__body">
+              <p class="service-card__cat"><span>01</span> / <span>BRANDING</span></p>
+              <div class="service-card__row">
+                <h3 class="service-card__title"><a href="services%20html/branding.html">Branding &amp; Creative
+                    Communication</a></h3>
+                <a class="service-card__arrow" href="services%20html/branding.html" aria-label="Explore Branding">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
           </article>
-          <article class="card card--dark"><b class="num">02</b>
-            <h3>Advertising &amp; Communication</h3><img src="assets/service-advertising.jpg"
-              alt="Advertising and communication">
-            <ul>
-              <li>Advertising Campaigns</li>
-              <li>Marketing Creatives</li>
-              <li>Social Media</li>
-              <li>Corporate Communication</li>
-              <li>Brochures &amp; Profiles</li>
-              <li>Presentations &amp; Catalogs</li>
-            </ul><a href="#contact">Explore →</a>
+          <article class="service-card">
+            <a class="service-card__media" href="services%20html/printing.html" tabindex="-1" aria-hidden="true">
+              <!-- IMAGE: assets/services/printing/hero.jpg -->
+              <img src="assets/services/printing/hero.jpg"
+                alt="Printed packaging, shopping bag, cup and brochures mockup" loading="lazy">
+            </a>
+            <div class="service-card__body">
+              <p class="service-card__cat"><span>02</span> / <span>PRINTING</span></p>
+              <div class="service-card__row">
+                <h3 class="service-card__title"><a href="services%20html/printing.html">Printing, Packaging &amp;
+                    Production</a></h3>
+                <a class="service-card__arrow" href="services%20html/printing.html" aria-label="Explore Printing">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
           </article>
-          <article class="card"><b class="num">03</b>
-            <h3>Digital &amp; Web</h3><img src="assets/service-digital.jpg" alt="Digital and web">
-            <ul>
-              <li>Website Design</li>
-              <li>Website Development</li>
-              <li>Landing Pages</li>
-              <li>Digital Creatives</li>
-              <li>Social Media Design</li>
-              <li>Online Brand Communication</li>
-            </ul><a href="#contact">Explore →</a>
-          </article>
-          <article class="card"><b class="num">04</b>
-            <h3>Print &amp; Brand Production</h3><img src="assets/service-print.jpg" alt="Print and brand production">
-            <ul>
-              <li>Corporate Print</li>
-              <li>Packaging &amp; Labels</li>
-              <li>Promotional Products</li>
-              <li>Merchandise</li>
-              <li>Large Format Printing</li>
-              <li>Custom Print Solutions</li>
-            </ul><a href="#contact">Explore →</a>
-          </article>
-          <article class="card"><b class="num">05</b>
-            <h3>Outdoor &amp; Brand Experiences</h3><img src="assets/service-outdoor.jpg"
-              alt="Outdoor and brand experiences">
-            <ul>
-              <li>Outdoor Advertising</li>
-              <li>Signage &amp; Display</li>
-              <li>Exhibition Branding</li>
-              <li>Event Branding</li>
-              <li>Vehicle Branding</li>
-              <li>Brand Experiences</li>
-            </ul><a href="#contact">Explore →</a>
+          <article class="service-card">
+            <a class="service-card__media" href="services%20html/outdoor.html" tabindex="-1" aria-hidden="true">
+              <!-- IMAGE: assets/services/outdoor/hero.jpg -->
+              <img src="assets/services/outdoor/hero.jpg" alt="Outdoor advertising billboard beside a city flyover"
+                loading="lazy">
+            </a>
+            <div class="service-card__body">
+              <p class="service-card__cat"><span>03</span> / <span>OUTDOOR</span></p>
+              <div class="service-card__row">
+                <h3 class="service-card__title"><a href="services%20html/outdoor.html">Outdoor &amp; Large Format
+                    Advertising</a></h3>
+                <a class="service-card__arrow" href="services%20html/outdoor.html" aria-label="Explore Outdoor">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5 12h14M13 6l6 6-6 6" />
+                  </svg>
+                </a>
+              </div>
+            </div>
           </article>
         </div>
       </div>
@@ -368,7 +365,8 @@
       </div>
       <div>
         <h4>Connect</h4><a href="tel:+919869837344">+91 98698 37344</a><a
-          href="mailto:jpadworks@gmail.com">jpadworks@gmail.com</a><a href="https://wa.me/919869837344" target="_blank" rel="noopener noreferrer">WhatsApp</a><span>Mumbai, India</span>
+          href="mailto:jpadworks@gmail.com">jpadworks@gmail.com</a><a href="https://wa.me/919869837344" target="_blank"
+          rel="noopener noreferrer">WhatsApp</a><span>Mumbai, India</span>
       </div>
     </div>
     <div class="container footer__bar"><span>© JP ADWORKS. All Rights Reserved.</span><span><a href="#">Privacy

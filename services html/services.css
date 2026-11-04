@@ -1023,7 +1023,7 @@ h2 {
    ========================================== */
 /* Outdoor: night-billboard image sits behind the right side of the CTA (../assets/services/outdoor/cta.jpg).
    If the file is missing nothing breaks – the black background simply remains. */
-.outdoor-page .cta::after {
+/* .outdoor-page .cta::after {
    display: none
 }
 
@@ -1035,17 +1035,11 @@ h2 {
    background: url(../assets/services/outdoor/cta.jpg) center/cover no-repeat;
    -webkit-mask-image: linear-gradient(90deg, transparent, #000 45%);
    mask-image: linear-gradient(90deg, transparent, #000 45%)
-}
+} */
 
-.outdoor-page .cta__in {
-   flex-direction: column;
-   align-items: flex-start;
-   gap: 1.4rem
-}
-
-.outdoor-page .cta .btn {
+/* .outdoor-page .cta .btn {
    margin-right: 0
-}
+} */
 
 @media(max-width:768px) {
    .outdoor-page .cta__bg {

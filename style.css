@@ -466,7 +466,8 @@ svg {
 }
 
 /* ==========================================
-   10. SERVICES – 5 horizontal cards; card 02 is dark
+   10. SERVICES – three large image cards
+   Every selector is prefixed .services / .service-card so nothing leaks into other sections.
    ========================================== */
 .services {
    padding-block: clamp(2.5rem, 5vw, 4rem);
@@ -474,94 +475,156 @@ svg {
 }
 
 .services__in {
+   display: block
+}
+
+/* Section label: short red rule + red uppercase text (no heading / intro, per reference) */
+.services__label {
+   display: flex;
+   align-items: center;
+   gap: 1.1rem;
+   margin-bottom: clamp(1.8rem, 3.4vw, 3rem);
+   color: var(--primary);
+   font-size: clamp(.85rem, 1.1vw, 1rem);
+   font-weight: 700;
+   letter-spacing: .06em;
+   text-transform: uppercase
+}
+
+.services__label::before {
+   content: "";
+   width: clamp(2.8rem, 4.6vw, 4.4rem);
+   height: 3px;
+   background: var(--primary);
+   flex: none
+}
+
+.services__grid {
    display: grid;
-   grid-template-columns: minmax(0, .9fr) minmax(0, 3.4fr);
-   gap: 2rem
+   grid-template-columns: repeat(3, minmax(0, 1fr));
+   gap: clamp(1rem, 1.6vw, 1.5rem)
 }
 
-.services h2 {
-   font-size: clamp(1.7rem, 2.5vw, 2.5rem)
-}
-
-.cards {
-   display: grid;
-   grid-template-columns: repeat(5, 1fr);
-   gap: .6rem
-}
-
-.card {
-   background: #fff;
-   padding: 1rem;
+/* Card: shadow-only hover (no movement/scaling), 0.3s */
+.service-card {
    display: flex;
    flex-direction: column;
-   gap: .7rem;
-   border: 1px solid var(--border);
-   transition: transform .3s
+   overflow: hidden;
+   border-radius: 18px;
+   background: #fff;
+   box-shadow: 0 6px 18px rgba(0, 0, 0, .08);
+   transition: box-shadow .3s ease
 }
 
-.card:hover {
-   transform: translateY(-8px);
+.service-card:hover {
+   box-shadow: 0 14px 34px rgba(0, 0, 0, .18)
 }
 
-.num {
-   color: var(--primary);
-   font-weight: 500;
-   font-size: .9rem
+.service-card__media {
+   display: block;
+   aspect-ratio: 4/3;
+   overflow: hidden;
+   background: #e3e0db
 }
 
-.card h3 {
-   font-family: var(--font-body);
-   font-weight: 600;
-   font-size: 1rem;
-   line-height: 1.25;
-   min-height: 2.5em
-}
-
-.card img,
-.card .ph {
+.services .service-card__media img,
+.services .service-card__media .ph {
    width: 100%;
-   aspect-ratio: 1/1;
+   height: 100%;
    object-fit: cover
 }
 
-.card ul {
-   font-size: .7rem;
-   color: var(--muted);
-   flex: 1
+.service-card__body {
+   display: flex;
+   flex: 1;
+   flex-direction: column;
+   gap: .45rem;
+   padding: clamp(1rem, 1.6vw, 1.35rem) clamp(1.1rem, 1.9vw, 1.6rem) clamp(1.1rem, 1.8vw, 1.5rem)
 }
 
-.card li {
-   padding-left: .9rem;
-   position: relative
+/* "01 / BRANDING": number + word red, slash black */
+.service-card__cat {
+   font-size: clamp(.78rem, .95vw, .9rem);
+   font-weight: 700;
+   letter-spacing: .05em;
+   line-height: 1.2;
+   color: var(--text)
 }
 
-.card li::before {
-   content: "•";
-   position: absolute;
-   left: 0
+.service-card__cat span {
+   color: var(--primary)
 }
 
-.card>a {
-   font-size: .75rem;
-   font-weight: 600;
-   padding-top: .7rem;
-   border-top: 1px solid var(--border)
+.service-card__row {
+   display: flex;
+   flex: 1;
+   align-items: center;
+   justify-content: space-between;
+   gap: 1rem
 }
 
-.card--dark {
-   background: var(--black);
-   color: #fff;
-   border-color: var(--black);
-   margin-top: -1.2rem;
-   padding-bottom: 1.5rem
+.service-card__title {
+   font-size: clamp(1.3rem, 2.15vw, 2rem);
+   font-weight: 700;
+   line-height: 1.12;
+   letter-spacing: -.01em;
+   color: var(--black)
 }
 
-.card--dark ul {
-   color: #ccc
+/* Circular arrow: transparent + red outline by default.
+   The red fill is bound to the arrow link's own :hover, so hovering elsewhere on the card never triggers it. */
+.service-card__arrow {
+   display: grid;
+   flex: none;
+   place-items: center;
+   width: clamp(2.6rem, 3.4vw, 3.2rem);
+   height: clamp(2.6rem, 3.4vw, 3.2rem);
+   border: 1.5px solid var(--primary);
+   border-radius: 50%;
+   background: transparent;
+   color: var(--primary);
+   transition: background-color .3s ease, color .3s ease
 }
 
-.card--dark>a {
-   border-color: #333
+.service-card__arrow svg {
+   width: 46%;
+   height: 46%;
+   stroke-width: 2.2
+}
+
+.service-card__arrow:hover,
+.service-card__arrow:focus-visible {
+   background: #e30613;
+   color: #fff
+}
+
+/* Tablet: two columns, third card centred on its own row */
+@media(max-width:900px) {
+   .services__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr))
+   }
+
+   .service-card:nth-child(3) {
+      grid-column: 1 / -1;
+      justify-self: center;
+      width: calc(50% - .75rem)
+   }
+}
+
+/* Mobile: stacked cards */
+@media(max-width:600px) {
+   .services__grid {
+      grid-template-columns: 1fr
+   }
+
+   .service-card:nth-child(3) {
+      grid-column: auto;
+      width: auto
+   }
+
+   .service-card__title {
+      font-size: clamp(1.3rem, 6vw, 1.7rem)
+   }
 }
 
 /* ==========================================
